@@ -603,9 +603,9 @@ void DocumentLoader::ResponseReceived(
 
   /* Start DOM Policy Code */
   LOG(INFO) << "I am in DocumentLoader::ResponseReceived: ";
-  if (response.HttpHeaderField(AtomicString("My-Policy-Header"))) {
+  if (response.HttpHeaderField(AtomicString("DOM-Security-Policy"))) {
 	  dom_security_policy_ = DOMSecurityPolicy::Create();
-	  dom_security_policy_->AddPolicyFromHeaderValue(AtomicString(response.HttpHeaderField(AtomicString("My-Policy-Header"))));
+	  dom_security_policy_->AddPolicyFromHeaderValue(AtomicString(response.HttpHeaderField(AtomicString("DOM-Security-Policy"))));
   }
   /* End DOM Policy Code */
 
